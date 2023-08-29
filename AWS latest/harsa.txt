@@ -1,0 +1,9 @@
+Sreeharsha Veerapalli to Everyone#!/bin/bash
+curl https://get.docker.com | bash
+
+
+10:55 AMAttendee 53 to EveryoneSir, public Ip aythe instance stop chesi Malla start chesthe change avtadi kada…so route 53 lo everytime update chestadha sir?
+
+
+11:38 AMSreeharsha Veerapalli to Everyonehttp://ac8b540c63da0474ca4186c2b24e95bb-1586716322.us-east-1.elb.amazonaws.com/
+

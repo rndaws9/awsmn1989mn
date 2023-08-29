@@ -1,0 +1,187 @@
+[root@ip-172-31-13-105 ~]# cat /tmp/hist.txt
+    1  curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019
+    2  chmod +x ./kubectl
+    3  mkdir -p $HOME/bin
+    4  cp ./kubectl $HOME/bin/kubectl
+    5  export PATH=$HOME/bin:$PATH
+    6  echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+    7  source $HOME/.bashrc
+    8  kubectl version --short --client
+    9  curl --silent --location "https://github.com/weaveworks/eksctl/releases/l
+
+;
+   10  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+   11  sudo mv /tmp/eksctl /usr/bin
+   12  eksctl version
+   13  aws configure
+   14  aws s3 ls
+   15  aws eks --region ap-south-1  update-kubeconfig --name s1c
+   16  kubectl get nodes
+   17  aws eks --region ap-south-1  update-kubeconfig --name s1c
+   18  kubectl config view
+   19  mv $HOME/.kube/config  $HOME/.kube/config.old
+   20  aws eks --region ap-south-1  update-kubeconfig --name s1c
+   21  kubectl config view
+   22  cat /root/.kube/config
+   23  aws eks --region ap-south-1  describe-cluster --name s1c
+   24  ls -lrth
+   25  kubectl version
+   26  curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/kubectl
+   27  chmod +x ./kubectl
+   28  mkdir -p $HOME/bin
+   29  cp ./kubectl $HOME/bin/kubectl
+   30  export PATH=$HOME/bin:$PATH
+   31  echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+   32  source $HOME/.bashrc
+   33  kubectl version
+   34  kubectl config view
+   35  kubectl get nodes
+   36  ls -lrth
+   37  kubectl api-resources
+   38  kubectl api-resources|get false
+   39  kubectl api-resources|grep false
+   40  kubectl api-resources|grep true
+   41  curl -sSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash~
+   42  curl -sSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+   43  helm version --short
+   44  ls -lrth
+   45  cd
+   46  yum install git -y
+   47  ls -lrth
+   48  git clone https://github.com/HoussemDellai/kubernetes-ingress-tls-ssl-https.git
+   49  ls -lrth
+   50  cd kubernetes-ingress-tls-ssl-https
+   51  ls -lrth
+   52  helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+   53  helm repo update
+   54  helm install ingr  ingress-nginx/ingress-nginx
+   55  kubectl get pods
+   56  kubectl get ns
+   57  kubectl get pods -n kube-system
+   58  kubectl get pods
+   59  kubectl get all
+   60  kubectl get all
+   61  kubectl describe svc service/ingr-ingress-nginx-controller
+   62  kubectl describe  service/ingr-ingress-nginx-controller
+   63  ll
+   64  kubectl apply -f app-namespace.yaml
+   65  ls -lrth
+   66  kubectl apply -f app1-deploy-svc.yaml
+   67  kubectl apply -f app2-deploy-svc.yaml
+   68  kubectl get services --namespace app
+   69  helm list -A
+   70  helm remove ingr
+   71  helm uninstall ingr
+   72  helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+   73  helm repo update
+   74  helm install app-ingress ingress-nginx/ingress-nginx `
+     --namespace ingress `
+   75       --create-namespace `
+     --set controller.replicaCount=2 `
+   76       --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux `
+     --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux
+   77  helm install app-ingress ingress-nginx/ingress-nginx
+   78  helm unstall app-ingress
+   79  helm uninstall app-ingress
+   80  helm install app-ingress ingress-nginx/ingress-nginx
+   81  kubectl get services --namespace ingress
+   82  kubectl get ns
+   83  helm uninstall app-ingress
+   84  helm install app-ingress ingress-nginx/ingress-nginx --namespace ingress --create-namespace
+   85  kubectl get services --namespace ingress
+   86  ls -lrth
+   87  kubectl get all
+   88  kubectl get ns
+   89  kubectl get all -n app
+   90  kubectl get all -n ingress
+   91  kubectl get svc -n app
+   92  kubectl describe svc webapp1-svc
+   93  kubectl describe svc webapp1-svc -n app
+   94  kubectl get ing -n app
+   95  kubectl get ing -n app-ingress
+   96  kubectl get ns
+   97  kubectl get ing -n ingress
+   98  kubectl get ing
+   99  kubectl get ing -n app
+  100  kubectl get ing -n ingress
+  101  kubectl get ing -n kube-system
+  102  ll
+  103  less app-ingress.yaml
+  104  kubectl apply -f app-ingress.yaml -n app
+  105  vi app-ingress.yaml
+  106  kubectl apply -f app-ingress.yaml -n app
+  107  vi app-ingress.yaml
+  108  kubectl get ing -n app
+  109  kubectl get svc  -n app
+  110  kubectl get svc --all
+  111  kubectl get svc --all-namespaces
+  112  vi app-ingress.yaml
+  113  nslookup af0584f906d6843e8aca91668498f823-1858957196.ap-south-1.elb.amazonaws.com
+  114  vi app-ingress.yaml
+  115  kubectl apply -f app-ingress.yaml
+  116  vi app-ingress.yaml
+  117  cp app-ingress.yaml app-ingress.yaml.bkp
+  118  vi app-ingress.yaml
+  119  kubectl apply -f app-ingress.yaml
+  120  vi app-ingress.yaml
+  121  kubectl apply -f app-ingress.yaml
+  122  vi app-ingress.yaml
+  123  kubectl apply -f app-ingress.yaml
+  124  vi app-ingress.yaml
+  125  kubectl apply -f app-ingress.yaml
+  126  vi app-ingress.yaml
+  127  kubectl apply -f app-ingress.yaml
+  128  vi app-ingress.yaml
+  129  kubectl create namespace cert-manager
+  130  helm repo add jetstack https://charts.jetstack.io
+  131  helm repo update
+  132  helm install cert-manager jetstack/cert-manager `
+    --namespace cert-manager `
+  133      --version v0.14.0 `
+    --set installCRDs=true
+
+  134  helm install cert-manager jetstack/cert-manager --namespace cert-manager  --version v0.14.0  --set installCRDs=true
+  135  helm install cert-manager jetstack/cert-manager --namespace cert-manager  --version v1.7.0  --set installCRDs=true
+  136  helm list -A
+  137  helm uninstall cert-manager
+  138  helm install cert-manager jetstack/cert-manager --namespace cert-manager  --version v1.7.0  --set installCRDs=true
+  139  kubectl get pods --namespace cert-manager
+  140  kubectl apply --namespace app -f ssl-tls-cluster-issuer.yaml
+  141  kubectl api-resources
+  142  kubectl apply --namespace app -f ssl-tls-cluster-issuer.yaml
+  143  l
+  144  ls -lrth
+  145  vi ssl-tls-cluster-issuer.yaml
+  146  ls -lrth
+  147  kubectl apply --namespace app -f ssl-tls-cluster-issuer.yaml
+  148  vi ssl-tls-cluster-issuer.yaml
+  149  kubectl apply --namespace app -f ssl-tls-cluster-issuer.yaml
+  150  kubectl apply --namespace app -f ssl-tls-ingress.yaml
+  151  vi ssl-tls-ingress.yaml
+  152  kubectl apply --namespace app -f ssl-tls-ingress.yaml
+  153  ls -lrth
+  154  cp ssl-tls-ingress.yaml ssl-tls-ingress.yaml.bkp
+  155  vi ssl-tls-ingress.yaml
+  156  kubectl apply --namespace app -f ssl-tls-ingress.yaml
+  157  vi ssl-tls-ingress.yaml
+  158  kubectl apply --namespace app -f ssl-tls-ingress.yaml
+  159  vi ssl-tls-ingress.yaml
+  160  kubectl apply --namespace app -f ssl-tls-ingress.yaml
+  161  ll
+  162  vi app-ingress.yaml
+  163  kubectl apply -f app-ingress.yaml
+  164  ls -lrth
+  165  vi app-ingress.yaml
+  166  kubectl apply -f app-ingress.yaml
+  167  kubectl  explain ingress.spec.rules.http.paths.backend.service
+  168  ll
+  169  mv app-ingress.yaml.bkp app-ingress.yaml.bkp.orig
+  170  mv app-ingress.yaml app-ingress.yaml.changed
+  171  mv app-ingress.yaml.bkp.orig app-ingress.yaml
+  172  ls -lrth
+  173  kubectl apply -f app-ingress.yaml
+  174  vi app-ingress.yaml
+  175  cd ..
+  176  ls -lrth
+  177  history>/tmp/hist.txt
+[root@ip-172-31-13-105 ~]#

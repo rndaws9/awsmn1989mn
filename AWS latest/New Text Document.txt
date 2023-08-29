@@ -1,0 +1,46 @@
+[root@ip-172-31-54-251 ~]# history
+    1  kubectl get nodes
+    2  curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019                                                                                        -08-22/bin/linux/amd64/kubectl
+    3  chmod +x ./kubectl
+    4  mkdir -p $HOME/bin
+    5  cp ./kubectl $HOME/bin/kubectl
+    6  export PATH=$HOME/bin:$PATH
+    7  echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+    8  source $HOME/.bashrc
+    9  kubectl version --short --client
+   10  curl --silent --location "https://github.com/weaveworks/eksctl/releases/l                                                                                        atest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+   11  sudo mv /tmp/eksctl /usr/bin
+   12  eksctl version
+   13  eksctl create cluster --name=eksdemo                   --region=us-east-2                                                                                                           --zones=us-east-2a,us-east-2b                   --without-nod                                                                                        egroup
+   14  aws configure
+   15  aws s3 ls
+   16  aws eks region
+   17  aws eks --region us-east-1 describe-cluster --name r1cluster  --query clu                                                                                        ster.status
+   18  kubectl config view
+   19  mv $HOME/.kube/config  $HOME/.kube/config.old
+   20  aws eks --region us-east-1 update-kubeconfig --name r1cluster
+   21  kubectl config view
+   22  kubectl get svc
+   23  kubectl get nodes
+   24  kubectl get all
+   25  kubectl get nodes
+   26  kubectl get pods
+   27  curl -sSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-                                                                                        helm-3 | bash
+   28  helm version --short
+   29  helm repo add datawire https://app.getambassador.io
+   30  helm repo update
+   31  kubectl apply -f https://app.getambassador.io/yaml/emissary/3.7.0/emissar                                                                                        y-crds.yaml
+   32  kubectl wait --timeout=90s --for=condition=available deployment emissary-                                                                                        apiext -n emissary-system
+   33   helm install -n emissary --create-namespace      emissary-ingress datawi                                                                                        re/emissary-ingress &&  kubectl rollout status  -n emissary deployment/emissary-                                                                                        ingress -w
+   34  kubectl get ns
+   35  kubectl get pods -n emissary-system
+   36  kubectl get pods -n emissary
+   37  df -h
+   38  ls -lrth
+   39  kubectl get pods
+   40  kubectl get ns
+   41  kubectl get all -n emissary
+   42  kubectl get all -n emissary-system
+   43  ls -lrth
+   44  history
+[root@ip-172-31-54-251 ~]#
